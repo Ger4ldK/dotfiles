@@ -1,3 +1,4 @@
+" TODO Port to .lua format
 " Ideally run on a terminal emulator with a PowerLine Nerd Font
 " Requires vim-plug and :PlugInstall to be run
 " Plugins
@@ -25,6 +26,17 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'wellle/context.vim'
 " GitGutter
 Plug 'airblade/vim-gitgutter'
+" Autocomplete
+Plug 'neovim/nvim-lspconfig'
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/cmp-path'
+Plug 'hrsh7th/cmp-cmdline'
+Plug 'hrsh7th/nvim-cmp'
+" Mason (LSP Manager)
+Plug 'williamboman/mason.nvim'
+" LSP Configs for Mason
+Plug 'williamboman/mason-lspconfig.nvim'
 call plug#end()
 
 " Base Vim config
@@ -96,7 +108,87 @@ let g:gitgutter_enabled = 1
 let g:gitgutter_highlight_lines = 1
 let g:gitgutter_async = 0
 
-" AutoPairs
 lua << EOF
+-- AutoPairs
 require("nvim-autopairs").setup {}
+
+-- Mason LSP Management
+require("mason").setup {}
+require("mason-lspconfig").setup {
+    ensure_installed = {
+        "tsserver",
+        "jsonls",
+        "bashls",
+        -- "gopls",
+    },
+    automatic_installation = true,
+}
+
+
+-- Autocomplete
+local cmp = require'cmp'
+
+cmp.setup({
+snippet = {
+  -- REQUIRED - you must specify a snippet engine
+  expand = function(args)
+    vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
+  end,
+},
+window = {
+  -- completion = cmp.config.window.bordered(),
+},
+mapping = cmp.mapping.preset.insert({
+  ['<Tab>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+}),
+sources = cmp.config.sources({
+  { name = 'nvim_lsp' },
+  { name = 'vsnip' }, -- For vsnip users.
+}, {
+  { name = 'buffer' },
+})
+})
+
+-- Set configuration for specific filetype.
+cmp.setup.filetype('gitcommit', {
+sources = cmp.config.sources({
+  { name = 'git' }, -- You can specify the `git` source if [you were installed it](https://github.com/petertriho/cmp-git).
+}, {
+  { name = 'buffer' },
+})
+})
+
+-- Use buffer source for `/` and `?` (if you enabled `native_menu`, this won't work anymore).
+cmp.setup.cmdline({ '/', '?' }, {
+mapping = cmp.mapping.preset.cmdline(),
+sources = {
+  { name = 'buffer' }
+}
+})
+
+-- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
+cmp.setup.cmdline(':', {
+mapping = cmp.mapping.preset.cmdline(),
+sources = cmp.config.sources({
+  { name = 'path' }
+}, {
+  { name = 'cmdline' }
+})
+})
+
+-- Set up lspconfig.
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
+-- Copy for each lsp server enabled.
+-- require('lspconfig')[''].setup {
+--    capabilities = capabilities
+-- }
+require('lspconfig')['tsserver'].setup {
+   capabilities = capabilities
+}
+require('lspconfig')['jsonls'].setup {
+   capabilities = capabilities
+}
+require('lspconfig')['bashls'].setup {
+   capabilities = capabilities
+}
 EOF
