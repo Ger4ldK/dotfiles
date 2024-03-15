@@ -1,4 +1,5 @@
 " TODO Port to .lua format
+" NVIM v0.9.5
 " Ideally run on a terminal emulator with a PowerLine Nerd Font
 " Requires vim-plug and :PlugInstall to be run
 " Plugins
@@ -60,7 +61,6 @@ set preserveindent
 set relativenumber
 set cursorline
 set scrolloff=25
-set cmdheight=0
 
 " Keybinds
 " Clear Search Highlights
