@@ -37,6 +37,13 @@ Plug 'hrsh7th/nvim-cmp'
 Plug 'williamboman/mason.nvim'
 " LSP Configs for Mason
 Plug 'williamboman/mason-lspconfig.nvim'
+" Wildmenu customization
+function! UpdateRemotePlugins(...)
+    " Needed to refresh runtime files
+    let &rtp=&rtp
+    UpdateRemotePlugins
+endfunction
+Plug 'gelguy/wilder.nvim', { 'do': function('UpdateRemotePlugins') }
 call plug#end()
 
 " Base Vim config
@@ -53,6 +60,7 @@ set preserveindent
 set relativenumber
 set cursorline
 set scrolloff=25
+set cmdheight=0
 
 " Keybinds
 " Clear Search Highlights
@@ -108,6 +116,26 @@ let g:gitgutter_enabled = 1
 let g:gitgutter_highlight_lines = 1
 let g:gitgutter_async = 0
 
+" Wildmenu customization
+" Default keys
+call wilder#setup({
+      \ 'modes': [':', '/', '?'],
+      \ 'next_key': '<Tab>',
+      \ 'previous_key': '<S-Tab>',
+      \ 'accept_key': '<Down>',
+      \ 'reject_key': '<Up>',
+      \ })
+call wilder#set_option('renderer', wilder#popupmenu_renderer(wilder#popupmenu_palette_theme({
+      \ 'highlighter': wilder#basic_highlighter(),
+      \ 'highlights': {
+      \   'accent': wilder#make_hl('WilderAccent', 'Pmenu', [{}, {}, {'foreground': '#fa8d34'}]),
+      \ },
+      \ 'border': 'rounded',
+      \ 'max_height': '75%',
+      \ 'min_height': 0,
+      \ 'prompt_position': 'top',
+      \ 'reverse': 0,
+      \ })))
 lua << EOF
 -- AutoPairs
 require("nvim-autopairs").setup {}
@@ -155,24 +183,6 @@ sources = cmp.config.sources({
   { name = 'git' }, -- You can specify the `git` source if [you were installed it](https://github.com/petertriho/cmp-git).
 }, {
   { name = 'buffer' },
-})
-})
-
--- Use buffer source for `/` and `?` (if you enabled `native_menu`, this won't work anymore).
-cmp.setup.cmdline({ '/', '?' }, {
-mapping = cmp.mapping.preset.cmdline(),
-sources = {
-  { name = 'buffer' }
-}
-})
-
--- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
-cmp.setup.cmdline(':', {
-mapping = cmp.mapping.preset.cmdline(),
-sources = cmp.config.sources({
-  { name = 'path' }
-}, {
-  { name = 'cmdline' }
 })
 })
 
