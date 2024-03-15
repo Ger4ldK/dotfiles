@@ -132,7 +132,9 @@ call wilder#set_option('renderer', wilder#popupmenu_renderer(wilder#popupmenu_pa
       \ },
       \ 'border': 'rounded',
       \ 'max_height': '75%',
-      \ 'min_height': 0,
+      \ 'max_width': '75%',
+      \ 'min_height': '75%',
+      \ 'min_width': '75%',
       \ 'prompt_position': 'top',
       \ 'reverse': 0,
       \ })))
