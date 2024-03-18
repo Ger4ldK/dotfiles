@@ -74,6 +74,10 @@ nnoremap O :nohls<cr>O
 nnoremap <space>W :w<cr>
 " Quit without Saving
 nnoremap <space>Z :q!<cr>
+" Fold
+nnoremap <space>f :zfa
+" Unfold
+nnoremap <space>F :zo<cr>
 " Telescope Live Grep
 " REQUIRES ripgrep https://github.com/BurntSushi/ripgrep?tab=readme-ov-file#installation
 nnoremap <CS-F> :Telescope live_grep<cr>
