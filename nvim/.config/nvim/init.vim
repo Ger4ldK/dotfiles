@@ -35,6 +35,8 @@ Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-cmdline'
 Plug 'hrsh7th/nvim-cmp'
+" Signatures
+Plug 'ray-x/lsp_signature.nvim'
 " Mason (LSP Manager)
 Plug 'williamboman/mason.nvim'
 " LSP Configs for Mason
@@ -216,4 +218,13 @@ require('lspconfig')['jsonls'].setup {
 require('lspconfig')['bashls'].setup {
    capabilities = capabilities
 }
+
+-- Signatures from LSP
+local cfg = {
+    hint_enable = false,
+    handler_opts = {
+      border = 'single'
+    },
+}
+require "lsp_signature".setup(cfg)
 EOF
