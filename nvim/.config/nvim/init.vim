@@ -24,6 +24,7 @@ Plug 'preservim/nerdcommenter'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 " Context
+" TODO update to treesitter context as it has more options
 Plug 'wellle/context.vim'
 " GitGutter
 Plug 'airblade/vim-gitgutter'
@@ -45,6 +46,8 @@ function! UpdateRemotePlugins(...)
     UpdateRemotePlugins
 endfunction
 Plug 'gelguy/wilder.nvim', { 'do': function('UpdateRemotePlugins') }
+" Minimap (REQUIRES code-minimap)
+Plug 'wfxr/minimap.vim'
 call plug#end()
 
 " Base Vim config
@@ -78,6 +81,8 @@ nnoremap <space>Z :q!<cr>
 nnoremap <space>f :zfa
 " Unfold
 nnoremap <space>F :zo<cr>
+" New tab
+nnoremap <space>n :tabnew<cr>
 " Telescope Live Grep
 " REQUIRES ripgrep https://github.com/BurntSushi/ripgrep?tab=readme-ov-file#installation
 nnoremap <CS-F> :Telescope live_grep<cr>
@@ -119,6 +124,10 @@ let g:context_enabled = 1
 let g:gitgutter_enabled = 1
 let g:gitgutter_highlight_lines = 1
 let g:gitgutter_async = 0
+
+" Minimap
+let g:minimap_auto_start = 1
+let g:minimap_git_colors = 1
 
 " Wildmenu customization
 " Default keys
