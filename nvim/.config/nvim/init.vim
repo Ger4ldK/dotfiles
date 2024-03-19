@@ -80,9 +80,9 @@ nnoremap <space>W :w<cr>
 " Quit without Saving
 nnoremap <space>Z :q!<cr>
 " Fold
-nnoremap <space>f :zfa
+nnoremap <space>f zfa
 " Unfold
-nnoremap <space>F :zo<cr>
+nnoremap <space>F zo<cr>
 " New tab
 nnoremap <space>n :tabnew<cr>
 " Telescope Live Grep
