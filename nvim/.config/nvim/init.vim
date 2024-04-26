@@ -11,6 +11,9 @@ if empty(glob(data_dir . '/autoload/plug.vim'))
 endif
 
 call plug#begin()
+" Treesitter
+" REQUIRES CLI TREESITTER
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 " Theme
 Plug 'sainnhe/gruvbox-material'
 " AutoPairs
@@ -24,8 +27,7 @@ Plug 'preservim/nerdcommenter'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 " Context
-" TODO update to treesitter context as it has more options
-Plug 'wellle/context.vim'
+Plug 'nvim-treesitter/nvim-treesitter-context'
 " GitGutter
 Plug 'airblade/vim-gitgutter'
 " Autocomplete
@@ -48,8 +50,9 @@ function! UpdateRemotePlugins(...)
     UpdateRemotePlugins
 endfunction
 Plug 'gelguy/wilder.nvim', { 'do': function('UpdateRemotePlugins') }
-" Minimap (REQUIRES code-minimap)
-Plug 'wfxr/minimap.vim'
+" Snippets
+Plug 'hrsh7th/vim-vsnip'
+Plug 'hrsh7th/vim-vsnip-integ'
 call plug#end()
 
 " Base Vim config
@@ -87,13 +90,17 @@ nnoremap <space>F zo<cr>
 nnoremap <space>n :tabnew<cr>
 " Telescope Live Grep
 " REQUIRES ripgrep https://github.com/BurntSushi/ripgrep?tab=readme-ov-file#installation
-nnoremap <CS-F> :Telescope live_grep<cr>
+nnoremap <C-f> :Telescope live_grep<cr>
 " Telescope File Finder
 nnoremap <C-p> :Telescope find_files<cr>
 " Telescope Buffers
 nnoremap <CS-R> :Telescope buffers<cr>
 " NERDCommenter Comment Toggle
 nnoremap <C-c> :call nerdcommenter#Comment(0, "toggle")<cr>
+" Movement for Colemak
+noremap m j
+noremap j h
+noremap <C-h> <C-u>
 
 " Theme
 set termguicolors
@@ -119,17 +126,10 @@ let g:NERDCommentEmptyLines = 1
 " Enable trimming of trailing whitespace when uncommenting
 let g:NERDTrimTrailingWhitespace = 1
 
-" Context
-let g:context_enabled = 1
-
 " GitGutter - track git changes by line
 let g:gitgutter_enabled = 1
 let g:gitgutter_highlight_lines = 1
 let g:gitgutter_async = 0
-
-" Minimap
-let g:minimap_auto_start = 1
-let g:minimap_git_colors = 1
 
 " Wildmenu customization
 " Default keys
@@ -164,7 +164,7 @@ require("mason-lspconfig").setup {
         "tsserver",
         "jsonls",
         "bashls",
-        -- "gopls",
+        "gopls",
     },
     automatic_installation = true,
 }
@@ -175,7 +175,6 @@ local cmp = require'cmp'
 
 cmp.setup({
 snippet = {
-  -- REQUIRED - you must specify a snippet engine
   expand = function(args)
     vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
   end,
@@ -203,6 +202,22 @@ sources = cmp.config.sources({
 })
 })
 
+-- Context
+require'treesitter-context'.setup{
+  enable = true, -- Enable this plugin (Can be enabled/disabled later via commands)
+  max_lines = 0, -- How many lines the window should span. Values <= 0 mean no limit.
+  min_window_height = 0, -- Minimum editor window height to enable context. Values <= 0 mean no limit.
+  line_numbers = true,
+  multiline_threshold = 20, -- Maximum number of lines to show for a single context
+  trim_scope = 'outer', -- Which context lines to discard if `max_lines` is exceeded. Choices: 'inner', 'outer'
+  mode = 'cursor',  -- Line used to calculate context. Choices: 'cursor', 'topline'
+  -- Separator between context and content. Should be a single character string, like '-'.
+  -- When separator is set, the context will only show up when there are at least 2 lines above cursorline.
+  separator = nil,
+  zindex = 20, -- The Z-index of the context window
+  on_attach = nil, -- (fun(buf: integer): boolean) return false to disable attaching
+}
+
 -- Set up lspconfig.
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 -- Copy for each lsp server enabled.
@@ -210,13 +225,16 @@ local capabilities = require('cmp_nvim_lsp').default_capabilities()
 --    capabilities = capabilities
 -- }
 require('lspconfig')['tsserver'].setup {
-   capabilities = capabilities
+    capabilities = capabilities
 }
 require('lspconfig')['jsonls'].setup {
-   capabilities = capabilities
+    capabilities = capabilities
 }
 require('lspconfig')['bashls'].setup {
-   capabilities = capabilities
+    capabilities = capabilities
+}
+require('lspconfig')['gopls'].setup {
+    capabilities = capabilities
 }
 
 -- Signatures from LSP
@@ -227,4 +245,12 @@ local cfg = {
     },
 }
 require "lsp_signature".setup(cfg)
+
+-- Treesitter
+require("nvim-treesitter.configs").setup({
+    auto_install = true,
+    highlight = {
+        enable = true
+    }
+})
 EOF
