@@ -111,10 +111,15 @@ export VISUAL="$EDITOR"
 alias vim="nvim"
 alias reloadconfig="source ~/.zshrc"
 alias clc="clear"
+alias got="go test"
+alias gob="go build"
+alias gor="go run"
+alias goi="go mod init"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+export PATH="/opt/homebrew/bin:$PATH"
 export NVM_DIR="$HOME/.nvm"
   [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
   [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
