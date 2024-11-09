@@ -5,7 +5,7 @@ require("nvim-autopairs").setup()
 vim.api.nvim_set_keymap("n", "<C-p>",  ":Telescope find_files<cr>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<C-f>",  ":Telescope live_grep<cr>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<C-S-F>",  ":Telescope grep_string<cr>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<C-S-R>",  ":Telescope buffers<cr>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "t",  ":Telescope buffers<cr>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<C-.>",  ":Telescope treesitter<cr>", { noremap = true, silent = true })
 
 -- Mason LSP Management
