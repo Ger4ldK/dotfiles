@@ -1,0 +1,14 @@
+name = "cwal"
+
+[colors]
+bg_base = "{background.hex}"
+bg_active = "{background.hex}"
+primary = "{color6.hex}"
+secondary = "{color4.hex}"
+accent = "{color1.hex}"
+warning = "{color4.hex}"
+danger = "{color5.hex}"
+fg_primary = "{color4.hex}"
+fg_secondary = "{foreground.hex}"
+fg_muted = "{color4.hex}"
+border_focus = "{color1.hex}"
