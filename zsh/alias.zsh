@@ -11,3 +11,6 @@ cw () {
     changeTheme "$1";
     clear&&fastfetch;
 }
+
+alias ls="ls -h --color"
+alias l="ls -hla --color"
