@@ -12,6 +12,7 @@ set preserveindent
 set relativenumber
 set cursorline
 set scrolloff=25
+syntax on
 
 " Keybinds
 " Clear Search Highlights
