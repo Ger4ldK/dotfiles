@@ -10,7 +10,6 @@ set shiftwidth=4
 set expandtab
 set preserveindent
 set relativenumber
-set cursorline
 set scrolloff=25
 syntax on
 
@@ -22,10 +21,6 @@ nnoremap a :nohls<cr>a
 nnoremap A :nohls<cr>A
 nnoremap o :nohls<cr>o
 nnoremap O :nohls<cr>O
-" Save
-nnoremap <space>W :w<cr>
-" Quit without Saving
-nnoremap <space>Z :q!<cr>
 
 " Cursor
 " changes cursor to thin line on insert 
