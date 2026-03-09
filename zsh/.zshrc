@@ -1,5 +1,3 @@
-export CWAL_OUT_DIR='/home/ger/.config/cwal/out'
-
 include () {
     [[ -f "$1" ]] && source "$1"
 }

@@ -13,3 +13,4 @@ checkAndCopy () {
 checkAndCopy "${cwalOutput}colors-sysc-greet.toml" "/usr/share/sysc-greet/themes/colors-sysc-greet.toml"
 checkAndCopy "${cwalOutput}colors-fuzzel.ini" "$HOME/.config/fuzzel/colors-fuzzel.ini"
 checkAndCopy "${cwalOutput}colors-niri.kdl" "$HOME/.config/niri/colors-niri.kdl"
+checkAndCopy "${cwalOutput}colors-alacritty.toml" "$HOME/.config/alacritty/colors-alacritty.toml"
