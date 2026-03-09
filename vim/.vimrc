@@ -32,3 +32,5 @@ nnoremap <space>Z :q!<cr>
 let &t_SI = "\e[5 q"
 " changes cursor to blinking block on insert end
 let &t_EI = "\e[1 q"
+" replace gets underscore
+let &t_SR = "\<Esc>[3 q"
