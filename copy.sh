@@ -14,7 +14,7 @@ copyDot () {
 
 copyDotFolder () {
     mkdir -p "$dotfilePath$2"
-    if [ -f "$1$2" ]; then 
+    if [ ! -z "$1$2" ]; then 
         cp -rf "$1$2"/. "$dotfilePath$2"
     fi
 }
@@ -23,6 +23,7 @@ copyDotFolder "$configPath" "alacritty"
 copyDotFolder "$configPath" "cwal/templates"
 copyDot "$configPath" "cwal/script.sh"
 copyDot "$configPath" "fastfetch/config.jsonc"
+copyDotFolder "$configPath" "fuzzel"
 copyDotFolder "$configPath" "niri"
 copyDotFolder "$configPath" "zsh"
 copyDotFolder "$configPath" "vim"
