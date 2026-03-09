@@ -7,5 +7,4 @@
 ## TODO
 - zsh prompt still is WIP, I'm aiming to show the vim status in some way, as well as the git status
 - nvim configs are probably gonna be redone from scratch again (just one more setup from the ground up, this next one will work I swear)
-- copy/apply scripts like in `main` branch
-- still am missing a lot from my Arch setup, probably will have more dirs show up here once I am done
+- still am missing a lot from my Arch setup (fresh install), probably will have more dirs show up here once I am done
