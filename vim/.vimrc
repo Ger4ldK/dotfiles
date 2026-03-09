@@ -1,3 +1,5 @@
+" by default vim won't see this, create a .zsh in HOME dir and source the path to this instead
+
 " Base Vim config
 set number
 set mouse=a
