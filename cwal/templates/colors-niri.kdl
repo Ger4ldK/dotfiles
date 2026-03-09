@@ -4,3 +4,4 @@ layout {
         inactive-color "{color0.hex}"
     }
 }
+spawn-at-startup "setwallpaper" "{wallpaper}"

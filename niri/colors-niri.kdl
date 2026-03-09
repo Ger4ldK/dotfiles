@@ -1,0 +1,7 @@
+layout {
+    focus-ring {
+        active-color "#ef7437"
+        inactive-color "#14131e"
+    }
+}
+spawn-at-startup "setwallpaper" "/home/ger/.wallpapers/EvaUnit02.png"
