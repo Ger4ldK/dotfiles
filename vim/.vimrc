@@ -30,5 +30,5 @@ nnoremap <space>Z :q!<cr>
 " Cursor
 " changes cursor to thin line on insert 
 let &t_SI = "\e[5 q"
-" changes cursor to block on insert end
+" changes cursor to blinking block on insert end
 let &t_EI = "\e[1 q"
