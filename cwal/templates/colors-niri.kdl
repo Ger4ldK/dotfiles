@@ -3,5 +3,9 @@ layout {
         active-color "{color6.hex}"
         inactive-color "{color0.hex}"
     }
+
+    insert-hint {
+        color "{color6.hex}9A"
+    }
 }
 spawn-at-startup "setwallpaper" "{wallpaper}"

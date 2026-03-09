@@ -3,5 +3,9 @@ layout {
         active-color "#ef7437"
         inactive-color "#14131e"
     }
+
+    insert-hint {
+        color "#ef74379A"
+    }
 }
 spawn-at-startup "setwallpaper" "/home/ger/.wallpapers/EvaUnit02.png"
