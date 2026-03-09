@@ -14,7 +14,9 @@ applyDot () {
 
 applyDotFolder () {
     mkdir -p "$2$1"
-    cp -rf "$dotfilePath$1"/. "$2$1"
+    if [ ! -z "$dotfilePath$1" ]; then 
+        cp -rf "$dotfilePath$1"/. "$2$1"
+    fi
 }
 
 applyDotFolder "alacritty" "$configPath"
