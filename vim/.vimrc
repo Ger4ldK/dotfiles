@@ -1,4 +1,4 @@
-" by default vim won't see this, create a .zsh in HOME dir and source the path to this instead
+" by default vim won't see this, create a .vimrc in HOME dir and source the path to this instead
 
 " Base Vim config
 set number
@@ -14,15 +14,6 @@ set preserveindent
 set relativenumber
 set scrolloff=25
 syntax on
-
-" Keybinds
-" Clear Search Highlights
-nnoremap i :nohls<cr>i
-nnoremap I :nohls<cr>I
-nnoremap a :nohls<cr>a
-nnoremap A :nohls<cr>A
-nnoremap o :nohls<cr>o
-nnoremap O :nohls<cr>O
 
 " Cursor
 " changes cursor to thin line on insert 
