@@ -1,6 +1,7 @@
 zstyle ':vcs_info:*' enable git
-zstyle ':vcs_info:git:*' formats '%b'
 zstyle ':vcs_info:*' check-for-changes true
+zstyle ':vcs_info:*' get-revision true
+zstyle ':vcs_info:git:*' formats '%F{magenta}%s %f (%F{cyan}%b%f%F{magenta})%f %F{yellow}%7.7i %m %a%f'
 
 # (Stolen from P10K implementation, i have no idea how this works)
 # Usage: prompt-length TEXT [COLUMNS]
@@ -38,7 +39,7 @@ precmd () {
   local gitInfo=${vcs_info_msg_0_}
 
   if [ $gitInfo ]; then
-    gitInfo=" %F{white}|%f %F{magenta}󰊢 on '${gitInfo}'%f"
+    gitInfo=" %F{white}|%f %F{magenta}${gitInfo}%f"
   fi
 
   local currentTime='%B%F{green}󰥔 %T%f%b'
@@ -80,9 +81,8 @@ precmd () {
       right=" ${right}"
     done
   fi 
-  PROMPT="${basePrompt}${gitInfo}${elapsedTime}${right}
+  PROMPT="${basePrompt}${elapsedTime}${gitInfo}${right}
 %F{white}󰘍%f "
-  
 }
 
 preexec() {
