@@ -10,6 +10,7 @@
     "position": "right"
   },
   "display": {
+    "brightColor":false,
     "separator": "", 
     "key": {
       "width": 16,
