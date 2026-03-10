@@ -1,3 +1,9 @@
+zstyle ':vcs_info:git:*' formats '%b %m %a'
+zstyle ':vcs_info:*' enable git
+zstyle ':vcs_info:*' check-for-changes true
+zstyle ':vcs_info:*' stagedstr ' +'
+zstyle ':vcs_info:*' unstagedstr ' !'
+
 # (Stolen from P10K implementation, i have no idea how this works)
 # Usage: prompt-length TEXT [COLUMNS]
 #
@@ -26,10 +32,17 @@ function prompt-length() {
     done
   fi
   echo $x
-}
+} 
 
 precmd () {
   local basePrompt='%B%F{cyan}%f %F{blue}%n%f%b %F{white}|%f %F{red}󰉋 %5~%f'
+  vcs_info
+  local gitInfo=${vcs_info_msg_0_}
+
+  if [ $gitInfo ]; then
+    gitInfo=" %F{white}|%f %F{magenta}${gitInfo}%f"
+  fi
+
   local currentTime='%B%F{green}󰥔 %T%f%b'
   elapsedTime=""
   if [ $timer ]; then
@@ -61,7 +74,7 @@ precmd () {
     unset timer
   fi
 
-  local spaceSize=$(($COLUMNS-$(prompt-length $currentTime)-$(prompt-length $elapsedTime)-$(prompt-length $basePrompt)))
+  local spaceSize=$(($COLUMNS-$(prompt-length $currentTime)-$(prompt-length $elapsedTime)-$(prompt-length $basePrompt)-$(prompt-length $gitInfo)))
   right="${currentTime}"
   if [ $spaceSize -ge 0 ]; then
     for i in {1..$spaceSize}
@@ -69,7 +82,7 @@ precmd () {
       right=" ${right}"
     done
   fi 
-  PROMPT="${basePrompt}${elapsedTime}${right}
+  PROMPT="${basePrompt}${gitInfo}${elapsedTime}${right}
 %F{white}󰘍%f "
   
 }
