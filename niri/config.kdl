@@ -373,6 +373,9 @@ binds {
     // Note: the entire command goes as a single argument. It's passed verbatim to `sh -c`.
     // For example, this is a standard bind to toggle the screen reader (orca).
     Super+Alt+S allow-when-locked=true hotkey-overlay-title=null { spawn-sh "pkill orca || exec orca"; }
+    Super+Shift+S hotkey-overlay-title="Select and Capture Screenshot in Clipboard" { spawn-sh "grim -g \"$(slurp)\" - | wl-copy"; }
+    Super+Shift+T hotkey-overlay-title="Screenshot to Clipboard" { spawn-sh "grim - | wl-copy"; }
+    Super+Ctrl+S hotkey-overlay-title="Save Screenshot" { spawn-sh "grim -t png \"$HOME/Pictures/Screenshots/$(date +\"%Y-%m-%d-%T\").png\""; }
 
     // Example volume keys mappings for PipeWire & WirePlumber.
     // The allow-when-locked=true property makes them work even when the session is locked.
