@@ -2,7 +2,7 @@ zstyle ':vcs_info:*' enable git
 zstyle ':vcs_info:*' check-for-changes true
 zstyle ':vcs_info:*' get-revision true
 zstyle ':vcs_info:git:*' actionformats '%F{magenta}%s %f %F{magenta}[%f %F{cyan}%b%f%F{white} | %f%F{yellow}%a%f %F{magenta}]%f'
-zstyle ':vcs_info:git:*' formats '%F{magenta}%s %f %F{magenta}(%f%F{cyan}%b%f%F{magenta})%f %F{yellow}%7.7i %m%f'
+zstyle ':vcs_info:git:*' formats '%F{magenta}%s %f %F{magenta}(%f%F{cyan}%b%f%F{magenta})%f %F{yellow}%7.7i%f'
 
 # (Stolen from P10K implementation, i have no idea how this works)
 # Usage: prompt-length TEXT [COLUMNS]
@@ -43,7 +43,7 @@ precmd () {
     gitInfo=" %F{white}|%f %F{magenta}${gitInfo}%f"
   fi
 
-  local currentTime='%B%F{green}󰥔 %T%f%b'
+  local currentTime=' %B%F{green}󰥔 %T%f%b'
   elapsedTime=""
   if [ $timer ]; then
     local nowNano=$(date +%s%0N)
@@ -70,19 +70,19 @@ precmd () {
       elapsed=$((${elapsed}%60))
     fi
 
-    elapsedTime=" %F{white}|  ${hours}${elapsed}${unit}%f"
+    elapsedTime=" %F{white} ${hours}${elapsed}${unit} |%f"
     unset timer
   fi
 
   local spaceSize=$(($COLUMNS-$(prompt-length $currentTime)-$(prompt-length $elapsedTime)-$(prompt-length $basePrompt)-$(prompt-length $gitInfo)))
-  right="${currentTime}"
+  right="${elapsedTime}${currentTime}"
   if [ $spaceSize -ge 0 ]; then
     for i in {1..$spaceSize}
     do
       right=" ${right}"
     done
   fi 
-  PROMPT="${basePrompt}${elapsedTime}${gitInfo}${right}
+  PROMPT="${basePrompt}${gitInfo}${right}
 %F{white}󰘍%f "
 }
 
