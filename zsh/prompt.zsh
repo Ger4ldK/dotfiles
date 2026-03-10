@@ -1,8 +1,6 @@
-zstyle ':vcs_info:git:*' formats '%b %m %a'
 zstyle ':vcs_info:*' enable git
+zstyle ':vcs_info:git:*' formats '%b'
 zstyle ':vcs_info:*' check-for-changes true
-zstyle ':vcs_info:*' stagedstr ' +'
-zstyle ':vcs_info:*' unstagedstr ' !'
 
 # (Stolen from P10K implementation, i have no idea how this works)
 # Usage: prompt-length TEXT [COLUMNS]
@@ -40,7 +38,7 @@ precmd () {
   local gitInfo=${vcs_info_msg_0_}
 
   if [ $gitInfo ]; then
-    gitInfo=" %F{white}|%f %F{magenta}${gitInfo}%f"
+    gitInfo=" %F{white}|%f %F{magenta}󰊢 on '${gitInfo}'%f"
   fi
 
   local currentTime='%B%F{green}󰥔 %T%f%b'
