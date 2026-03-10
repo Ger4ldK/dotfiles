@@ -1,7 +1,7 @@
 zstyle ':vcs_info:*' enable git
 zstyle ':vcs_info:*' check-for-changes true
 zstyle ':vcs_info:*' get-revision true
-zstyle ':vcs_info:git:*' formats '%F{magenta}%s %f (%F{cyan}%b%f%F{magenta})%f %F{yellow}%7.7i %m %a%f'
+zstyle ':vcs_info:git:*' formats '%F{magenta}%s %f (%F{cyan}%b%f%F{magenta})%f %F{yellow}%7.7i %m%f'
 
 # (Stolen from P10K implementation, i have no idea how this works)
 # Usage: prompt-length TEXT [COLUMNS]
