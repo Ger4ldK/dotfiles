@@ -43,7 +43,6 @@ precmd () {
     gitInfo=" %F{white}|%f %F{magenta}${gitInfo}%f"
   fi
 
-  local currentTime=' %B%F{green}󰥔 %T%f%b'
   elapsedTime=""
   if [ $timer ]; then
     local nowNano=$(date +%s%0N)
@@ -74,6 +73,7 @@ precmd () {
     unset timer
   fi
 
+  local currentTime=' %B%F{green}󰥔 %T%f%b'
   local spaceSize=$(($COLUMNS-$(prompt-length $currentTime)-$(prompt-length $elapsedTime)-$(prompt-length $basePrompt)-$(prompt-length $gitInfo)))
   right="${elapsedTime}${currentTime}"
   if [ $spaceSize -ge 0 ]; then
