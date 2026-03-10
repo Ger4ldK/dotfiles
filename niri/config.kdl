@@ -68,7 +68,7 @@ input {
 
     // Focus windows and outputs automatically when moving the mouse into them.
     // Setting max-scroll-amount="0%" makes it work only on windows already fully on screen.
-    focus-follows-mouse max-scroll-amount="0%"
+    // focus-follows-mouse max-scroll-amount="0%"
 }
 
 gestures {
@@ -260,6 +260,7 @@ layout {
 // which may be more convenient to use.
 // See the binds section below for more spawn examples.
 spawn-at-startup "activate-linux"
+spawn-at-startup "wl-paste" "--watch" "cliphist" "store"
 
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
 // spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
@@ -372,10 +373,12 @@ binds {
     // Use spawn-sh to run a shell command. Do this if you need pipes, multiple commands, etc.
     // Note: the entire command goes as a single argument. It's passed verbatim to `sh -c`.
     // For example, this is a standard bind to toggle the screen reader (orca).
-    Super+Alt+S allow-when-locked=true hotkey-overlay-title=null { spawn-sh "pkill orca || exec orca"; }
-    Super+Shift+S hotkey-overlay-title="Select and Capture Screenshot in Clipboard" { spawn-sh "grim -g \"$(slurp)\" - | wl-copy"; }
-    Super+Shift+T hotkey-overlay-title="Screenshot to Clipboard" { spawn-sh "grim - | wl-copy"; }
-    Super+Ctrl+S hotkey-overlay-title="Save Screenshot" { spawn-sh "grim -t png \"$HOME/Pictures/Screenshots/$(date +\"%Y-%m-%d-%T\").png\""; }
+    Mod+Alt+S allow-when-locked=true hotkey-overlay-title=null { spawn-sh "pkill orca || exec orca"; }
+    Mod+Shift+S hotkey-overlay-title="Select and Capture Screenshot in Clipboard" { spawn-sh "grim -g \"$(slurp)\" - | wl-copy"; }
+    Mod+Shift+T hotkey-overlay-title="Screenshot to Clipboard" { spawn-sh "grim - | wl-copy"; }
+    Mod+Ctrl+S hotkey-overlay-title="Save Screenshot" { spawn-sh "grim -t png \"$HOME/Pictures/Screenshots/$(date +\"%Y-%m-%d-%T\").png\""; }
+    // https://github.com/sentriz/cliphist/blob/master/contrib/cliphist-fuzzel-img
+    Mod+D { spawn-sh "bash $HOME/Misc/cliphist-fuzzel-img.sh"; }
 
     // Example volume keys mappings for PipeWire & WirePlumber.
     // The allow-when-locked=true property makes them work even when the session is locked.
