@@ -1,4 +1,5 @@
 local wt = require 'wezterm'
+local wp = require 'colors.wp'
 local homeDir = os.getenv("HOME")
 local colorPath = homeDir .. "/.config/wezterm/colors/colors-wezterm.toml"
 

@@ -13,3 +13,4 @@ checkAndCopy "${CWAL_OUT_DIR}/colors-fuzzel.ini" "$HOME/.config/fuzzel/colors-fu
 checkAndCopy "${CWAL_OUT_DIR}/colors-niri.kdl" "$HOME/.config/niri/colors-niri.kdl"
 checkAndCopy "${CWAL_OUT_DIR}/colors-alacritty.toml" "$HOME/.config/alacritty/colors-alacritty.toml"
 checkAndCopy "${CWAL_OUT_DIR}/colors-wezterm.toml" "$HOME/.config/wezterm/colors/colors-wezterm.toml"
+checkAndCopy "${CWAL_OUT_DIR}/colors-wezterm.lua" "$HOME/.config/wezterm/colors/wp.lua"
