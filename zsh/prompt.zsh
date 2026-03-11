@@ -35,12 +35,12 @@ function prompt-length() {
 } 
 
 precmd () {
-  local basePrompt='%B%F{cyan}%f %F{blue}%n%f%b %F{white}|%f %F{red}󰉋 %5~%f'
+  local basePrompt='%B%F{cyan}%f %F{blue}%f%K{blue}%F{black}  %n %f%b%k%K{red}%F{blue}%f %F{black}󰉋 %5~%f %k%F{red}%f'
+
   vcs_info
   local gitInfo=${vcs_info_msg_0_}
-
   if [ $gitInfo ]; then
-    gitInfo=" %F{white}|%f %F{magenta}${gitInfo}%f"
+    gitInfo=" %F{magenta}${gitInfo}%f"
   fi
 
   elapsedTime=""
@@ -69,11 +69,11 @@ precmd () {
       elapsed=$((${elapsed}%60))
     fi
 
-    elapsedTime=" %F{white} ${hours}${elapsed}${unit} |%f"
+    elapsedTime=" %F{white} ${hours}${elapsed}${unit} %f"
     unset timer
   fi
 
-  local currentTime=' %B%F{green}󰥔 %T%f%b'
+  local currentTime='%B%F{green}%f%K{green}%F{black}󰥔 %T%f%k%F{green}%f%b'
   local spaceSize=$(($COLUMNS-$(prompt-length $currentTime)-$(prompt-length $elapsedTime)-$(prompt-length $basePrompt)-$(prompt-length $gitInfo)))
   right="${elapsedTime}${currentTime}"
   if [ $spaceSize -ge 0 ]; then
