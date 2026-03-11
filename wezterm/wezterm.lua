@@ -19,5 +19,6 @@ return {
         bottom = "0.5cell",
     },
     colors = wt.color.load_scheme(colorPath),
+    automatically_reload_config = true,
 }
 
