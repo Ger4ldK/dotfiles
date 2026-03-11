@@ -1,0 +1,34 @@
+[metadata]
+name = "Cwal Gen"
+author = "ger"
+origin_url = "https://github.com/Ger4ldK/dotfiles/blob/main/wezterm/colors"
+
+[colors]
+foreground = "#d0d0d1"
+background = "#14131e"
+cursor_bg = "#d0d0d1"
+cursor_fg = "#14131e"
+cursor_border = "#d0d0d1"
+selection_fg = "#d0d0d1"
+selection_bg = "#ff9999"
+
+ansi = [
+  "#14131e",
+  "#ff9999",
+  "#ac76d0",
+  "#ff3a44",
+  "#9a7ed0",
+  "#d971d9",
+  "#ef7437",
+  "#9c9ca9",
+]
+brights = [
+  "#9482cc",
+  "#ffb2b2",
+  "#bf60f9",
+  "#ff4049",
+  "#9f75f1",
+  "#f680f6",
+  "#ff925c",
+  "#d0d0d1",
+]
