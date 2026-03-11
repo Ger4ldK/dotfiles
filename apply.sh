@@ -8,8 +8,8 @@ checkAndTouch () {
 }
 
 applyDot () {
-    checkAndTouch "$2"
-    cp -f "$dotfilePath$1" "$2"
+    checkAndTouch "$configPath$1"
+    cp -f "$dotfilePath$1" "$configPath$1"
 }
 
 applyDotFolder () {
@@ -27,4 +27,5 @@ applyDotFolder "fuzzel" "$configPath"
 applyDotFolder "niri" "$configPath"
 applyDotFolder "zsh" "$configPath"
 applyDotFolder "vim" "$configPath"
+applyDotFolder "wezterm" "$configPath"
 
