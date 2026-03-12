@@ -35,7 +35,7 @@ function prompt-length() {
 } 
 
 precmd () {
-  local basePrompt='%F{cyan}%f %F{blue}%f%K{blue}%F{black}  %n %f%k%K{red}%F{blue}%f %F{black}󰉋 %5~%f %k%F{red}%f'
+  local basePrompt='%F{cyan}%f %F{green}%f%K{green}%F{black}  %n %f%k%K{red}%F{green}%f %F{black}󰉋 %5~%f %k%F{red}%f'
 
   vcs_info
   local gitInfo=${vcs_info_msg_0_}
@@ -73,7 +73,7 @@ precmd () {
     unset timer
   fi
 
-  local currentTime='%F{green}%f%K{green}%F{black}󰥔 %T%f%k%F{green}%f'
+  local currentTime='%F{cyan}%f%K{cyan}%F{black}󰥔 %T%f%k%F{cyan}%f'
   local spaceSize=$(($COLUMNS-$(prompt-length $currentTime)-$(prompt-length $elapsedTime)-$(prompt-length $basePrompt)-$(prompt-length $gitInfo)))
   right="${elapsedTime}${currentTime}"
   if [ $spaceSize -ge 0 ]; then
@@ -86,7 +86,12 @@ precmd () {
 %F{white}󰘍%f "
 }
 
+zle-line-finish () {
+    PROMPT=''
+    zle .reset-prompt
+}
+zle -N zle-line-finish
+
 preexec() {
   timer=$(($(date +%s%0N)/1000000))
 }
-

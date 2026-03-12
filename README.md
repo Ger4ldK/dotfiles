@@ -5,6 +5,4 @@
 - aiming to be as decoupled as possible, but might have some overlaps
 
 ## TODO
-- zsh prompt still is WIP, I'm aiming to show the vim status in some way, as well as the git status
-- nvim configs are probably gonna be redone from scratch again (just one more setup from the ground up, this next one will work I swear)
-- still am missing a lot from my Arch setup (fresh install), probably will have more dirs show up here once I am done
+- zsh prompt still is WIP, aiming to show the vim status in some way
