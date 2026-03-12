@@ -28,4 +28,5 @@ copyDotFolder "$configPath" "niri"
 copyDotFolder "$configPath" "zsh"
 copyDotFolder "$configPath" "vim"
 copyDotFolder "$configPath" "wezterm"
+copyDotFolder "$configPath" "nvim"
 

@@ -7,7 +7,7 @@ return {
     font = wt.font('FiraCode Nerd Font Mono', { weight = 'Regular' }),
     font_size = 12,
     animation_fps = 144,
-    enable_tab_bar = false,
+    hide_tab_bar_if_only_one_tab = true,
     cursor_blink_rate = 500,
 	default_cursor_style = "BlinkingBlock",
     adjust_window_size_when_changing_font_size = true,

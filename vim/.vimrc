@@ -24,3 +24,10 @@ let &t_EI = "\e[1 q"
 " replace gets underscore
 let &t_SR = "\<Esc>[3 q"
 
+" Keybinds
+" Save
+nnoremap <space>W :w<cr>
+" Quit without Saving
+nnoremap <space>Z :q!<cr>
+" New Tab (manage with gt and gT)
+nnoremap <space>n :tabnew<cr>
