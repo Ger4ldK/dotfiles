@@ -86,11 +86,24 @@ precmd () {
 %F{white}󰘍%f "
 }
 
-zle-line-finish () {
+function zle-line-finish () {
     PROMPT=''
+    RPROMPT=''
     zle .reset-prompt
 }
 zle -N zle-line-finish
+
+ZLE_RPROMPT_INDENT=0
+function zle-line-init zle-keymap-select {
+  local normal="%F{blue}%f%K{blue}%F{black}NORMAL%k%F{blue}%f"
+  local insert=""
+  local vimMode="${${KEYMAP/vicmd/$normal}/(main|viins)/$insert}"
+   
+  RPROMPT=$vimMode
+  zle reset-prompt
+}
+zle -N zle-line-init
+zle -N zle-keymap-select
 
 preexec() {
   timer=$(($(date +%s%0N)/1000000))

@@ -1,6 +1,7 @@
 " by default vim won't see this, create a .vimrc in HOME dir and source the path to this instead
 
 " Base Vim config
+colorscheme default " inherit terminal colors
 set number
 set mouse=a
 set ignorecase
