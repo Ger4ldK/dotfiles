@@ -24,10 +24,13 @@ let &t_EI = "\e[1 q"
 " replace gets underscore
 let &t_SR = "\<Esc>[3 q"
 
+let mapleader = " "
 " Keybinds
 " Save
-nnoremap <space>W :w<cr>
+nnoremap <leader>W :w<cr>
 " Quit without Saving
-nnoremap <space>Z :q!<cr>
+nnoremap <leader>Z :q!<cr>
 " New Tab (manage with gt and gT)
-nnoremap <space>n :tabnew<cr>
+nnoremap <leader>n :tabnew<cr>
+" Go back to file viewer
+nnoremap <leader>cd :Ex<cr>

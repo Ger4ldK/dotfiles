@@ -11,8 +11,12 @@ vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 vim.opt.preserveindent = true
 vim.opt.scrolloff = 25
+vim.api.nvim_set_option("clipboard", "unnamedplus")
 
 -- Keybinds
+-- leader mappings are done in lazy.lua as well
+vim.g.mapleader = " "
+
 -- Clear Search Highlights
 vim.api.nvim_set_keymap("n", "i", ":nohls<cr>i", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "I", ":nohls<cr>I", { noremap = true, silent = true })
@@ -20,5 +24,11 @@ vim.api.nvim_set_keymap("n", "a", ":nohls<cr>a", { noremap = true, silent = true
 vim.api.nvim_set_keymap("n", "A", ":nohls<cr>A", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "o", ":nohls<cr>o", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "O", ":nohls<cr>O", { noremap = true, silent = true })
+-- Save
+vim.api.nvim_set_keymap("n", "<leader>W",  ":w<cr>", { noremap = true, silent = true })
+-- Quit without Saving
+vim.api.nvim_set_keymap("n", "<leader>Z", ":q!<cr>", { noremap = true, silent = true })
 -- New tab
-vim.api.nvim_set_keymap("n", "<space>n",  ":tabnew<cr>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>n",  ":tabnew<cr>", { noremap = true, silent = true })
+-- Back to FE
+vim.api.nvim_set_keymap("n", "<leader>cd", ":Ex<cr>", { noremap = true, silent = true })
