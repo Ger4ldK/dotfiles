@@ -1,5 +1,5 @@
 ## Prerequisites
-- Vim 0.11.6 (will bump and keep updated if I remember to)
+- Vim 0.12.0 (will bump and keep updated if I remember to)
 
 ## Usage
 
