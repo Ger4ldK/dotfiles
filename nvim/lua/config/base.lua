@@ -18,17 +18,17 @@ vim.api.nvim_set_option("clipboard", "unnamedplus")
 vim.g.mapleader = " "
 
 -- Clear Search Highlights
-vim.api.nvim_set_keymap("n", "i", ":nohls<cr>i", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "I", ":nohls<cr>I", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "a", ":nohls<cr>a", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "A", ":nohls<cr>A", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "o", ":nohls<cr>o", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "O", ":nohls<cr>O", { noremap = true, silent = true })
+vim.keymap.set("n", "i", ":nohls<cr>i", { noremap = true, silent = true, desc = "Insert before cursor" })
+vim.keymap.set("n", "I", ":nohls<cr>I", { noremap = true, silent = true, desc = "Insert at start of line" })
+vim.keymap.set("n", "a", ":nohls<cr>a", { noremap = true, silent = true, desc = "Insert after cursor" })
+vim.keymap.set("n", "A", ":nohls<cr>A", { noremap = true, silent = true, desc = "Insert at end of line" })
+vim.keymap.set("n", "o", ":nohls<cr>o", { noremap = true, silent = true, desc = "Insert new line under cursor" })
+vim.keymap.set("n", "O", ":nohls<cr>O", { noremap = true, silent = true, desc = "Insert new line above cursor" })
 -- Save
-vim.api.nvim_set_keymap("n", "<leader>W",  ":w<cr>", { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>W",  ":w<cr>", { noremap = true, silent = true, desc = "Save" })
 -- Quit without Saving
-vim.api.nvim_set_keymap("n", "<leader>Z", ":q!<cr>", { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>Z", ":q!<cr>", { noremap = true, silent = true, desc = "Close without Saving" })
 -- New tab
-vim.api.nvim_set_keymap("n", "<leader>n",  ":tabnew<cr>", { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>n",  ":tabnew<cr>", { noremap = true, silent = true, desc = "New Tab" })
 -- Back to FE
-vim.api.nvim_set_keymap("n", "<leader>cd", ":Ex<cr>", { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>cd", ":Ex<cr>", { noremap = true, silent = true, desc = "Return to netrw" })
