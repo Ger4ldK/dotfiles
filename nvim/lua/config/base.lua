@@ -11,6 +11,8 @@ vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 vim.opt.preserveindent = true
 vim.opt.scrolloff = 25
+vim.opt.undofile = true
+vim.opt.undodir = vim.fn.expand("~/.misc/undodir")
 
 vim.api.nvim_set_option("clipboard", "unnamedplus")
 
