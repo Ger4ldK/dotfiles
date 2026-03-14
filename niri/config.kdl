@@ -125,11 +125,10 @@ output "Acer Technologies XV340CK P THQSM0013P00" {
             proportion 0.5
             proportion 0.66666
 	
-	}
-	focus-ring {
-	   width 1
-	}
-    	default-column-width { proportion 0.33333; }
+	    }
+	    focus-ring {
+            width 1
+	    }
     }
 }
 
