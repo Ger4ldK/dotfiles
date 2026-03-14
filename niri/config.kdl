@@ -383,7 +383,7 @@ binds {
     Mod+Shift+T hotkey-overlay-title="Screenshot to Clipboard" { spawn-sh "grim - | wl-copy"; }
     Mod+Ctrl+S hotkey-overlay-title="Save Screenshot" { spawn-sh "grim -t png \"$HOME/Pictures/Screenshots/$(date +\"%Y-%m-%d-%T\").png\""; }
     // https://github.com/sentriz/cliphist/blob/master/contrib/cliphist-fuzzel-img
-    Mod+D { spawn-sh "bash $HOME/Misc/cliphist-fuzzel-img.sh"; }
+    Mod+D hotkey-overlay-title="Show Clipboard History" { spawn-sh "bash $HOME/Misc/cliphist-fuzzel-img.sh"; }
 
     // Example volume keys mappings for PipeWire & WirePlumber.
     // The allow-when-locked=true property makes them work even when the session is locked.
