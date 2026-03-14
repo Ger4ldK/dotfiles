@@ -1,4 +1,4 @@
--- Base Vim config with no plugins
+-- Base NeoVim config with no plugins
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.mouse="a"
@@ -11,6 +11,7 @@ vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 vim.opt.preserveindent = true
 vim.opt.scrolloff = 25
+
 vim.api.nvim_set_option("clipboard", "unnamedplus")
 
 -- Keybinds
