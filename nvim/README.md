@@ -17,8 +17,6 @@
   - LSP + a few more plugins, tab completion
 - error/warn display
   - Show an icon by the line number, underline specific segment/line
-- colors from cwal
-  - just add to the copy script
 - QoL - closing brackets, notif system treesitter for warns/errs, status line
   - closing brackets is a must
   - notifs look nice but that's it, rest of the feature list cover what they do anyway
