@@ -18,12 +18,12 @@ vim.opt.foldlevel = 3 -- n levels in before folding
 vim.api.nvim_create_autocmd('FileType', {
     pattern = languages,
     callback = function()
-      -- syntax highlighting, provided by Neovim
-      vim.treesitter.start()
-      -- folds, provided by Neovim
-      vim.wo.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
-      vim.wo.foldmethod = 'expr'
-      -- indentation, provided by nvim-treesitter
-      vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+        -- syntax highlighting, provided by Neovim
+        vim.treesitter.start()
+        -- folds, provided by Neovim
+        vim.wo.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
+        vim.wo.foldmethod = 'expr'
+        -- indentation, provided by nvim-treesitter
+        vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
     end,
 })

@@ -13,6 +13,8 @@ vim.opt.preserveindent = true
 vim.opt.scrolloff = 25
 vim.opt.undofile = true
 vim.opt.undodir = vim.fn.expand("~/.misc/undodir")
+vim.opt.autocomplete = true
+vim.opt.autochdir = true
 
 vim.api.nvim_set_option("clipboard", "unnamedplus")
 
