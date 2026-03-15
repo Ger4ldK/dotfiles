@@ -1,20 +1,9 @@
-languages = {
-    'lua',
-    'go',
-    'rust',
-    'c',
-    'vim',
-    'vimdoc',
-    'kdl',
-    'toml',
-    'json',
-    'markdown',
-}
-
 vim.pack.add {
     { src = "https://github.com/nvim-treesitter/nvim-treesitter" },
     { src = "https://github.com/nvim-treesitter/nvim-treesitter-context" },
 }
+
+languages = require('nvim-treesitter').get_installed()
 
 require('nvim-treesitter').setup()
 require('nvim-treesitter').install(languages)
