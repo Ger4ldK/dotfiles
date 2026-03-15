@@ -17,8 +17,9 @@
   - LSP + a few more plugins, tab completion
 - error/warn display
   - Show an icon by the line number, underline specific segment/line
-- QoL - notif system treesitter for warns/errs, status line
+- QoL - notif system for warns/errs, status line
   - notifs look nice but that's it, rest of the feature list cover what they do anyway
   - is it really a complete config if there's no custom status line?
     - usual stuff - mode, color scheme, position in line/file
+  - undotree
 
