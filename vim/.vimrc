@@ -27,9 +27,9 @@ let &t_SR = "\<Esc>[3 q"
 let mapleader = " "
 " Keybinds
 " Save
-nnoremap <leader>W :w<cr>
-" Quit without Saving
-nnoremap <leader>Z :q!<cr>
+nnoremap <leader>w :w<cr>
+" Quit
+nnoremap <leader>q :q<cr>
 " New Tab (manage with gt and gT)
 nnoremap <leader>n :tabnew<cr>
 " Go back to file viewer

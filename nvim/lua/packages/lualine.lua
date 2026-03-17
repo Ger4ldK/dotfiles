@@ -35,7 +35,7 @@ require('lualine').setup({
                 },
             },
         },
-        lualine_x = {'diagnostics'},
+        lualine_x = {'searchcount', 'diagnostics'},
         lualine_y = {'encoding'},
         lualine_z = {'location'}
   },
@@ -43,3 +43,8 @@ require('lualine').setup({
 
 -- disable native tabline
 vim.o.showtabline = 0
+
+-- disable native statusline components
+vim.o.showmode = false
+vim.o.shortmess = "ltToOCFcsS"
+vim.o.showcmd = false
