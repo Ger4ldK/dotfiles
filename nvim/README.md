@@ -2,7 +2,7 @@
 - Vim 0.12.0 (will bump and keep updated if I remember to)
 
 ## Usage
-- Leader is <Space>
+- Leader is `<Space>`
 - <leader>t is Telescope related stuff
 - <leader>mm shows the Mason popup for LSP installs, 'i' installs, 'X' uninstalls
 - <leader>u shows the undo-tree
