@@ -9,9 +9,4 @@
 - :h lsp for LSP related keybinds
     - Ctrl-x Ctrl-o for omnifunc
     - Ctrl-n for next item, Ctrl-p for previous, Ctrl-y to confirm
-
-## TODO/Wishlist for features
-- QoL - notif system for warns/errs, status line
-  - is it really a complete config if there's no custom status line?
-    - usual stuff - mode, color scheme, position in line/file
-
+- Tabline is disabled, tabs are shown in the status bar

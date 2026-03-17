@@ -16,6 +16,7 @@ vim.o.undofile = true
 vim.o.undodir = vim.fn.expand("~/.misc/undodir")
 vim.o.autocomplete = true
 vim.o.autoread = true
+vim.o.timeout = false
 
 vim.api.nvim_set_option("clipboard", "unnamedplus")
 
