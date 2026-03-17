@@ -10,7 +10,7 @@ require('nvim-treesitter').install(languages)
 
 require('treesitter-context').setup({
     enable = true,
-    mode = cursor,
+    mode = 'cursor',
 })
 
 -- 'za' to toggle fold at cursor
