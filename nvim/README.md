@@ -10,4 +10,4 @@
     - Ctrl-x Ctrl-o for omnifunc
     - Ctrl-n for next item, Ctrl-p for previous, Ctrl-y to confirm
 - Tabline is disabled, tabs are shown in the status bar
-- run `:checkehealth` frequently to see if any updates need to be done
+- run `:checkhealth` frequently to see if any updates need to be done
