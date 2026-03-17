@@ -7,5 +7,4 @@
 - QoL - notif system for warns/errs, status line
   - is it really a complete config if there's no custom status line?
     - usual stuff - mode, color scheme, position in line/file
-  - undotree
 
