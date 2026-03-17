@@ -4,21 +4,7 @@
 ## Usage
 
 ## TODO/Wishlist for features
-- list implementations/definitions
-  - Telescope, treesitters and LSPs?
-- show type at cursor (like when hovering over a type in an IDE)
-  - Definitely will need treesitter and LSPs
-- list usages
-  - Telescope, treesitter
-- refactoring tools 
-  - treesitter
-  - cdo + telescope suggested as well
-- autocomplete, autosuggest
-  - LSP + a few more plugins, tab completion
-- error/warn display
-  - Show an icon by the line number, underline specific segment/line
 - QoL - notif system for warns/errs, status line
-  - notifs look nice but that's it, rest of the feature list cover what they do anyway
   - is it really a complete config if there's no custom status line?
     - usual stuff - mode, color scheme, position in line/file
   - undotree
