@@ -6,7 +6,7 @@ vim.pack.add {
     { src = "https://github.com/saghen/blink.cmp" },
 }
 
-local capabilities = require('blink-cmp').get_lsp_capabilities(nil, true)
+local capabilities = require('blink.cmp').get_lsp_capabilities(nil, true)
 require('mason').setup()
 require('mason-lspconfig').setup {
     capabilities = capabilities,

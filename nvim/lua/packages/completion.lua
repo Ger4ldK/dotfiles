@@ -14,7 +14,7 @@ require('blink.cmp').setup({
         enabled = true,
     },
     fuzzy = {
-        implementation = 'lua',
+        implementation = 'rust',
     },
     completion = {
         ghost_text = {
@@ -27,8 +27,5 @@ require('blink.cmp').setup({
             auto_show = true,
             auto_show_delay_ms = 100,
         },
-    },
-    keymap = {
-        preset = 'super-tab'
     },
 })
