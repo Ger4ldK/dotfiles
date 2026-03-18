@@ -6,4 +6,5 @@ require('packages.tree-sitter')
 require('packages.lsp')
 require('packages.undotree')
 require('packages.lualine')
+require('packages.completion')
 

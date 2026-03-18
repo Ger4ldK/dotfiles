@@ -3,10 +3,14 @@ vim.pack.add {
     { src = "https://github.com/mason-org/mason.nvim" },
     { src = "https://github.com/mason-org/mason-lspconfig.nvim" },
     { src = "https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim" },
+    { src = "https://github.com/saghen/blink.cmp" },
 }
 
+local capabilities = require('blink-cmp').get_lsp_capabilities(nil, true)
 require('mason').setup()
-require('mason-lspconfig').setup()
+require('mason-lspconfig').setup {
+    capabilities = capabilities,
+}
 require('mason-tool-installer').setup({
     ensure_installed = { -- lua and vimscript LS
         "lua_ls",
@@ -36,9 +40,6 @@ vim.lsp.config('lua_ls', {
         },
     },
 })
-
--- borders for hover
-vim.o.winborder = 'rounded'
 
 -- Mason
 vim.keymap.set("n", "<leader>mm", ":Mason<cr>", { noremap = true, silent = true, desc = "Mason LSP Manager" })

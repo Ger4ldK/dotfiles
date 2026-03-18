@@ -7,7 +7,6 @@
 - `<leader>`mm shows the Mason popup for LSP installs, 'i' installs, 'X' uninstalls
 - `<leader>`u shows the undo-tree
 - `:h lsp` for LSP related keybinds
-    - Ctrl-x Ctrl-o for omnifunc
-    - Ctrl-n for next item, Ctrl-p for previous, Ctrl-y to confirm
+- Tab complete with blink-cmp
 - Tabline is disabled, tabs are shown in the status bar
 - run `:checkhealth` frequently to see if any updates need to be done

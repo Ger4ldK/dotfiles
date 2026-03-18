@@ -14,7 +14,6 @@ vim.o.preserveindent = true
 vim.o.scrolloff = 25
 vim.o.undofile = true
 vim.o.undodir = vim.fn.expand("~/.misc/undodir")
-vim.o.autocomplete = true
 vim.o.autoread = true
 vim.o.timeout = false
 
