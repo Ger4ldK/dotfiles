@@ -1,2 +1,2 @@
-require("config.base")
+require("config.init")
 require("config.packages")

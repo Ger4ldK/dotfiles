@@ -10,3 +10,4 @@
 - Tab complete with blink-cmp
 - Tabline is disabled, tabs are shown in the status bar
 - run `:checkhealth` frequently to see if any updates need to be done
+- `<leader>`O shows the symbol-outline tree
