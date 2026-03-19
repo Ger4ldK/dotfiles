@@ -29,4 +29,5 @@ applyDotFolder "zsh" "$configPath"
 applyDotFolder "vim" "$configPath"
 applyDotFolder "wezterm" "$configPath"
 applyDotFolder "nvim" "$configPath"
+applyDotFolder "yazi" "$configPath"
 

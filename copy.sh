@@ -29,4 +29,5 @@ copyDotFolder "$configPath" "zsh"
 copyDotFolder "$configPath" "vim"
 copyDotFolder "$configPath" "wezterm"
 copyDotFolder "$configPath" "nvim"
+copyDotFolder "$configPath" "yazi"
 
