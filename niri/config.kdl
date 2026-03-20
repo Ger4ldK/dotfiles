@@ -258,8 +258,8 @@ layout {
 // Note that running niri as a session supports xdg-desktop-autostart,
 // which may be more convenient to use.
 // See the binds section below for more spawn examples.
-spawn-at-startup "activate-linux"
 spawn-at-startup "wl-paste" "--watch" "cliphist" "store"
+spawn-at-startup "quickshell"
 
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
 // spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
@@ -377,7 +377,6 @@ binds {
     // Use spawn-sh to run a shell command. Do this if you need pipes, multiple commands, etc.
     // Note: the entire command goes as a single argument. It's passed verbatim to `sh -c`.
     // For example, this is a standard bind to toggle the screen reader (orca).
-    Mod+Alt+S allow-when-locked=true hotkey-overlay-title=null { spawn-sh "pkill orca || exec orca"; }
     Mod+Shift+S hotkey-overlay-title="Select and Capture Screenshot in Clipboard" { spawn-sh "grim -g \"$(slurp)\" - | wl-copy"; }
     Mod+Shift+T hotkey-overlay-title="Screenshot to Clipboard" { spawn-sh "grim - | wl-copy"; }
     Mod+Ctrl+S hotkey-overlay-title="Save Screenshot" { spawn-sh "grim -t png \"$HOME/Pictures/Screenshots/$(date +\"%Y-%m-%d-%T\").png\""; }
