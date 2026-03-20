@@ -41,13 +41,13 @@ ShellRoot {
 
 				Text {
 					text: "Activate Arch Linux"
-					color: "#50ffffff"
+					color: Colors.foreground
 					font.pointSize: 18
 				}
 
 				Text {
 					text: "Go to Settings to activate Arch Linux"
-					color: "#50ffffff"
+					color: Colors.foreground
 					font.pointSize: 12
 				}
 			}
