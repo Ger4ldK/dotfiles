@@ -4,26 +4,26 @@ import QtQuick
 Rectangle {
     color: Colors.background
     height: parent.height
-    width: 220
-    bottomLeftRadius: 10
-    bottomRightRadius: 10
+    width: 260
+    bottomLeftRadius: Constants.radius
+    bottomRightRadius: Constants.radius
 
     Text {
         anchors.verticalCenter: parent.verticalCenter
         anchors.right: parent.right 
-        anchors.rightMargin: 24
+        anchors.rightMargin: Constants.clockMargin
         id: dateText
         text: DateTime.date
-        font.pointSize: 14
+        font.pointSize: Constants.fontSize
         color: Colors.foreground
     }
     Text {
         anchors.verticalCenter: parent.verticalCenter
         anchors.left: parent.left 
-        anchors.leftMargin: 24
+        anchors.leftMargin: Constants.clockMargin
         id: timeText
         text: DateTime.time
-        font.pointSize: 18
+        font.pointSize: Constants.bigFontSize
         color: Colors.foreground
     }
 }

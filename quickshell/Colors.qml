@@ -4,7 +4,7 @@ import QtQuick
 QtObject {
     readonly property string wallpaper: "/home/ger/.wallpapers/EvaUnit02.png"
 
-    readonly property color background: "#14131e"
+    readonly property color background: "#E614131e" // 90% opacity (matches niri)
     readonly property color foreground: "#d0d0d1"
     readonly property color cursor: "#d0d0d1"
 

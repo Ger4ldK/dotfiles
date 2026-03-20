@@ -20,7 +20,7 @@ Singleton {
 
     Process {
         id: dateProc
-        command: ['date','+%a, %b %d']
+        command: ['date','+%a, %b %d %Y']
         running: true
         stdout: StdioCollector {
             onStreamFinished: root.date = this.text
