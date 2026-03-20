@@ -4,7 +4,7 @@ import QtQuick
 Rectangle {
     color: Colors.background
     height: parent.height
-    width: 260
+    width: 280
     bottomLeftRadius: Constants.radius
     bottomRightRadius: Constants.radius
 
