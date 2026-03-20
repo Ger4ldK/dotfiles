@@ -10,7 +10,7 @@ Scope {
             required property var modelData
             screen: modelData
             
-            implicitHeight: 30
+            height: 36
             color: "transparent"
 
             anchors {
@@ -19,9 +19,8 @@ Scope {
                 right: true
             }
 
-
             Clock {
-                anchors.centerIn: parent
+                anchors.horizontalCenter: parent.horizontalCenter
             }
         }
     }
