@@ -11,6 +11,7 @@ I thought I left frontend work behind ;-;
 - Wallpaper picker with cwal call after
 - App launcher
 - Power controls (shutdown, restart)
+- Notification popups
 
 ## Mindset for widgets
 - If I frequently need to open my terminal to check on it/adjust it, I'm making it a widget

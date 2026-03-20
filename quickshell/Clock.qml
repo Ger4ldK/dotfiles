@@ -1,9 +1,7 @@
 import QtQuick
 
 Text {
-    required property string time
-
-    text: time
     id: clock
+    text: DateTime.time
     font.pointSize: 12
 }
