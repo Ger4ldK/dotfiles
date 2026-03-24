@@ -119,7 +119,6 @@ output "Acer Technologies XV340CK P THQSM0013P00" {
     scale 1.15
     layout {
         preset-column-widths {
-            proportion 0.16666
             proportion 0.25
             proportion 0.33333
             proportion 0.5

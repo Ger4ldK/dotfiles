@@ -1,10 +1,4 @@
 [mgr]
-show_hidden = true
-sort_by = "alphabetical"
-sort_sensitive = false
-show_symlink = true
-sort_dir_first = true
-
 # gvfs keybinds
 prepend_keymap = [
     { on = [ "M", "m" ], run = "plugin gvfs -- select-then-mount --jump", desc = "Select device to mount and jump to its mount point" },
@@ -13,24 +7,6 @@ prepend_keymap = [
     { on = [ "M", "a" ], run = "plugin gvfs -- add-mount", desc = "Add a GVFS mount URI" },
     { on = [ "M", "e" ], run = "plugin gvfs -- edit-mount", desc = "Edit a GVFS mount URI" },
     { on = [ "M", "r" ], run = "plugin gvfs -- remove-mount", desc = "Remove a GVFS mount URI" },
-    { on = [ "g", "m" ], run = "plugin gvfs -- jump-to-device --automount", desc = "Automount then select device to jump to its mount point" },
+    { on = [ "g", "m" ], run = "plugin gvfs -- jump-to-device", desc = "Select device then jump to its mount point" },
 ]
-
-[preview]
-wrap = "yes"
-image_delay = 50
-image_quality = 50
-
-[opener]
-edit = [
-    { run = "$EDITOR %s", block = true, for = "unix" },
-]
-
-[open]
-append_rules = [
-    { url = "*", use = "edit" },
-]
-
-[tasks]
-image_bound      = [ 65535, 65535 ]
 
