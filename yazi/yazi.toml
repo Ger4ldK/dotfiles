@@ -32,5 +32,5 @@ append_rules = [
 ]
 
 [tasks]
-image_bound      = [ 65535, 65535 ]
+image_bound = [ 65535, 65535 ]
 

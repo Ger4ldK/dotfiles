@@ -187,12 +187,12 @@ layout {
         // If you enable the border, you probably want to disable the focus ring.
         off
 
-        width 4
-        active-color "#ffc87f"
-        inactive-color "#505050"
-
+        // width 4
+        // active-color "#ffc87f"
+        // inactive-color "#505050"
+        //
         // Color of the border around windows that request your attention.
-        urgent-color "#9b0000"
+        // urgent-color "#9b0000"
 
         // Gradients can use a few different interpolation color spaces.
         // For example, this is a pastel rainbow gradient via in="oklch longer hue".
@@ -251,6 +251,8 @@ layout {
         // top 10
         // bottom 64
     }
+
+    background-color "transparent"
 }
 
 // Add lines like this to spawn processes at startup.
@@ -356,6 +358,12 @@ window-rule {
     match app-id=r#"firefox$"# title="^Picture-in-Picture$"
     open-floating true
     opacity 1.0
+}
+
+layer-rule {
+    match namespace="^wallpaper$|^quickshell$"
+
+    place-within-backdrop true
 }
 
 binds {
