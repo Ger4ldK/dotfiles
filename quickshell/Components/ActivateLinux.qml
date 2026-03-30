@@ -2,6 +2,7 @@ import QtQuick
 import QtQuick.Layouts
 import Quickshell
 import Quickshell.Wayland
+import "../Singletons" as Singletons
 
 ShellRoot {
 	Variants {
@@ -41,13 +42,13 @@ ShellRoot {
 
 				Text {
 					text: "Activate Arch Linux"
-					color: Colors.foreground
+					color: Singletons.Colors.foreground
 					font.pointSize: 18
 				}
 
 				Text {
 					text: "Go to Settings to activate Arch Linux"
-					color: Colors.foreground
+					color: Singletons.Colors.foreground
 					font.pointSize: 12
 				}
 			}

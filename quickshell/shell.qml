@@ -1,6 +1,7 @@
 import Quickshell
+import "./Components" as Components
 
 Scope {
-    Bar {}
-    ActivateLinux {}
+    Components.Bar {}
+    Components.ActivateLinux {}
 }
