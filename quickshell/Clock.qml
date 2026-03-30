@@ -5,6 +5,8 @@ Rectangle {
     color: Colors.background
     height: parent.height
     width: 280
+    topLeftRadius: Constants.radius
+    topRightRadius: Constants.radius
     bottomLeftRadius: Constants.radius
     bottomRightRadius: Constants.radius
 

@@ -13,6 +13,10 @@ Scope {
             height: 36
             color: "transparent"
 
+            margins {
+                top: 2
+                bottom: 2
+            }
             anchors {
                 top: true
                 left: true
