@@ -1,5 +1,4 @@
 import Quickshell
-import QtQuick
 
 Scope {
     id: root
@@ -10,12 +9,14 @@ Scope {
             required property var modelData
             screen: modelData
             
-            height: 36
+            implicitHeight: 36
             color: "transparent"
 
             margins {
-                top: 2
-                bottom: 2
+                top: 4
+                bottom: 4
+                left: 4
+                right: 4
             }
             anchors {
                 top: true
@@ -25,6 +26,9 @@ Scope {
 
             Clock {
                 anchors.horizontalCenter: parent.horizontalCenter
+            }
+            Details {
+                anchors.right: parent.right
             }
         }
     }

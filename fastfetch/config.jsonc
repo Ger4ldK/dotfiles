@@ -16,7 +16,10 @@
       "width": 16,
       "type": "string",
       "paddingLeft": 0
-    }
+    },
+    "size": {
+        "binaryPrefix": "jedec"
+    } 
   },
   "modules": [
     {
