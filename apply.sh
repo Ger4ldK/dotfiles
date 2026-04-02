@@ -19,7 +19,6 @@ applyDotFolder () {
     fi
 }
 
-applyDotFolder "alacritty" "$configPath"
 applyDotFolder "cwal/templates" "$configPath"
 applyDot "cwal/script.sh" "$configPath"
 applyDot "cwal/cwal.ini" "$configPath"
@@ -28,7 +27,6 @@ applyDotFolder "fuzzel" "$configPath"
 applyDotFolder "niri" "$configPath"
 applyDotFolder "zsh" "$configPath"
 applyDotFolder "vim" "$configPath"
-applyDotFolder "wezterm" "$configPath"
 applyDotFolder "kitty" "$configPath"
 applyDotFolder "nvim" "$configPath"
 applyDotFolder "yazi" "$configPath"

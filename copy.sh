@@ -19,7 +19,6 @@ copyDotFolder () {
     fi
 }
 
-copyDotFolder "$configPath" "alacritty"
 copyDotFolder "$configPath" "cwal/templates"
 copyDot "$configPath" "cwal/script.sh"
 copyDot "$configPath" "cwal/cwal.ini"
@@ -28,7 +27,6 @@ copyDotFolder "$configPath" "fuzzel"
 copyDotFolder "$configPath" "niri"
 copyDotFolder "$configPath" "zsh"
 copyDotFolder "$configPath" "vim"
-copyDotFolder "$configPath" "wezterm"
 copyDotFolder "$configPath" "kitty"
 copyDotFolder "$configPath" "nvim"
 copyDotFolder "$configPath" "yazi"
