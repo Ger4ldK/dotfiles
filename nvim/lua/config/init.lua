@@ -16,8 +16,7 @@ vim.o.undofile = true
 vim.o.undodir = vim.fn.expand("~/.misc/undodir")
 vim.o.autoread = true
 vim.o.timeout = false
-
-vim.api.nvim_set_option("clipboard", "unnamedplus")
+vim.o.clipboard = "unnamedplus"
 
 -- Keybinds
 vim.g.mapleader = " "
@@ -37,3 +36,9 @@ vim.keymap.set("n", "<leader>q", ":q<cr>", { noremap = true, silent = true, desc
 vim.keymap.set("n", "<leader>n",  ":tabnew<cr>", { noremap = true, silent = true, desc = "New Tab" })
 -- Back to FE
 vim.keymap.set("n", "<leader>cd", ":Ex<cr>", { noremap = true, silent = true, desc = "Return to netrw" })
+-- Move in wrapped text
+vim.keymap.set("n", "j", "v:count == 0 ? 'gj' : 'j'", { noremap = true, silent = true, expr = true })
+vim.keymap.set("n", "k", "v:count == 0 ? 'gk' : 'k'", { noremap = true, silent = true, expr = true })
+vim.keymap.set("n", "<Down>", "v:count == 0 ? 'gj' : 'j'", { noremap = true, silent = true, expr = true })
+vim.keymap.set("n", "<Up>", "v:count == 0 ? 'gk' : 'k'", { noremap = true, silent = true, expr = true })
+
