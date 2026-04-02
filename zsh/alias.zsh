@@ -12,5 +12,15 @@ cw () {
     clear&&fastfetch;
 }
 
+fe() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	command yazi "$@" --cwd-file="$tmp"
+	IFS= read -r -d '' cwd < "$tmp"
+	[ "$cwd" != "$PWD" ] && [ -d "$cwd" ] && builtin cd -- "$cwd"
+	rm -f -- "$tmp"
+}
+
 alias ls="ls -h --color"
 alias l="ls -hla --color"
+
+eval "$(zoxide init --cmd cd zsh)"
