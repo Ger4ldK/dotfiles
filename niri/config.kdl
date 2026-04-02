@@ -398,6 +398,8 @@ binds {
     // https://github.com/sentriz/cliphist/blob/master/contrib/cliphist-fuzzel-img
     Mod+D hotkey-overlay-title="Show Clipboard History" { spawn-sh "bash $HOME/Misc/cliphist-fuzzel-img.sh"; }
 
+    Mod+H hotkey-overlay-title="Toggle Focused Window Opacity" { toggle-window-rule-opacity; }
+
     // Example volume keys mappings for PipeWire & WirePlumber.
     // The allow-when-locked=true property makes them work even when the session is locked.
     // Using spawn-sh allows to pass multiple arguments together with the command.
