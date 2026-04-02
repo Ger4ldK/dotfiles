@@ -18,14 +18,14 @@ Singleton {
                 const used = parseFloat(m[2])
                 const total = parseFloat(m[1])
                 const pct= used/total * 100
-                root.mem = "   " + used.toFixed(1) + "/" + total + "GB (" + pct.toFixed(0) + "%)"
+                root.mem = used.toFixed(1) + "/" + total + "GB (" + pct.toFixed(0) + "%)"
             }
         }
         Component.onCompleted: running = true
     }
 
     Timer {
-        interval: 200
+        interval: 5000
         running: true
         repeat: true
         onTriggered: memProc.running = true

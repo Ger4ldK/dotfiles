@@ -5,25 +5,31 @@ Rectangle {
     color: Singletons.Colors.background
     border.color: Singletons.Colors.color2
     implicitHeight: parent.height
-    implicitWidth: timeText.width + dateText.width + 70
+    implicitWidth: timeText.horizontalSize + dateText.horizontalSize
     radius: Singletons.Constants.radius
 
     Text {
+        id: timeText
+        property int horizontalSize
+        horizontalSize: this.width + this.anchors.rightMargin + this.anchors.leftMargin 
         anchors.verticalCenter: parent.verticalCenter
         anchors.left: parent.left 
-        anchors.leftMargin: Singletons.Constants.clockMargin
-        id: timeText
+        anchors.leftMargin: 24
+        anchors.rightMargin: 22
         text: Singletons.DateTime.time
         font.pointSize: Singletons.Constants.bigFontSize
         color: Singletons.Colors.foreground
     }
     Text {
+        id: dateText
+        property int horizontalSize
+        horizontalSize: this.width + this.anchors.rightMargin + this.anchors.leftMargin 
         anchors.verticalCenter: parent.verticalCenter
         anchors.right: parent.right 
-        anchors.rightMargin: Singletons.Constants.clockMargin
-        id: dateText
+        anchors.rightMargin: 24
         text: Singletons.DateTime.date
         font.pointSize: Singletons.Constants.fontSize
         color: Singletons.Colors.foreground
     }
 }
+

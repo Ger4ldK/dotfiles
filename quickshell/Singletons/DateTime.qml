@@ -31,6 +31,9 @@ Singleton {
         interval: 20000
         running: true
         repeat: true
-        onTriggered: timeProc.running = true
+        onTriggered: () => {
+            timeProc.running = true
+            dateProc.running = true
+        }
     }
 }
