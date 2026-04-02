@@ -10,7 +10,7 @@ RowLayout {
         id: cpuUsage
         fontSize: Singletons.Constants.smallFontSize
         text: Singletons.CPU.cpu + "% (" + Singletons.CPU.cpuTemp + ")"
-        icon: "󰻠"
+        icon: ""
         iconColor: Singletons.Colors.color5
     }
 

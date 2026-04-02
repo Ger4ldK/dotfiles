@@ -12,5 +12,5 @@ checkAndCopy "${CWAL_OUT_DIR}/colors-sysc-greet.toml" "/usr/share/sysc-greet/the
 checkAndCopy "${CWAL_OUT_DIR}/colors-fuzzel.ini" "$HOME/.config/fuzzel/colors-fuzzel.ini"
 checkAndCopy "${CWAL_OUT_DIR}/colors-niri.kdl" "$HOME/.config/niri/colors-niri.kdl"
 checkAndCopy "${CWAL_OUT_DIR}/colors-alacritty.toml" "$HOME/.config/alacritty/colors-alacritty.toml"
-checkAndCopy "${CWAL_OUT_DIR}/colors-quickshell.qml" "$HOME/.config/quickshell/Colors.qml"
+checkAndCopy "${CWAL_OUT_DIR}/colors-quickshell.qml" "$HOME/.config/quickshell/Singletons/Colors.qml"
 checkAndCopy "${CWAL_OUT_DIR}/colors-kitty.conf" "$HOME/.config/kitty/colors-kitty.conf"
