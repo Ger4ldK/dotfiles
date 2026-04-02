@@ -22,6 +22,7 @@ applyDotFolder () {
 applyDotFolder "alacritty" "$configPath"
 applyDotFolder "cwal/templates" "$configPath"
 applyDot "cwal/script.sh" "$configPath"
+applyDot "cwal/cwal.ini" "$configPath"
 applyDotFolder "fastfetch" "$configPath"
 applyDotFolder "fuzzel" "$configPath"
 applyDotFolder "niri" "$configPath"

@@ -22,6 +22,7 @@ copyDotFolder () {
 copyDotFolder "$configPath" "alacritty"
 copyDotFolder "$configPath" "cwal/templates"
 copyDot "$configPath" "cwal/script.sh"
+copyDot "$configPath" "cwal/cwal.ini"
 copyDot "$configPath" "fastfetch/config.jsonc"
 copyDotFolder "$configPath" "fuzzel"
 copyDotFolder "$configPath" "niri"
