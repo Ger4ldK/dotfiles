@@ -258,6 +258,12 @@ layout {
     background-color "transparent"
 }
 
+overview {
+    workspace-shadow {
+        off
+    }
+}
+
 // Add lines like this to spawn processes at startup.
 // Note that running niri as a session supports xdg-desktop-autostart,
 // which may be more convenient to use.
