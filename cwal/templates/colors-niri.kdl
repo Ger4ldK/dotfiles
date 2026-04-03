@@ -8,4 +8,4 @@ layout {
         color "{color6.hex}9A"
     }
 }
-spawn-at-startup "setwallpaper" "{wallpaper}"
+spawn-at-startup "setwallpaper" "m" "scale" "{wallpaper}"
