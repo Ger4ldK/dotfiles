@@ -49,6 +49,7 @@ Singleton {
         repeat: true
         onTriggered: () => {
             cpuProc.running = true
+            cpuTempProc.running = true
         }
     }
 }

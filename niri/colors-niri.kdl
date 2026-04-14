@@ -8,4 +8,4 @@ layout {
         color "#ef74379A"
     }
 }
-spawn-at-startup "setwallpaper" "m" "scale" "/home/ger/.wallpapers/EvaUnit02.png"
+spawn-at-startup "sh" "-c" "setwallpaper -m scale /home/ger/.wallpapers/EvaUnit02.png"
