@@ -14,7 +14,7 @@ Rectangle {
         horizontalSize: this.width + this.anchors.rightMargin + this.anchors.leftMargin 
         anchors.verticalCenter: parent.verticalCenter
         anchors.left: parent.left 
-        anchors.leftMargin: 24
+        anchors.leftMargin: 16
         anchors.rightMargin: 22
         text: Singletons.DateTime.time
         font.pointSize: Singletons.Constants.bigFontSize
@@ -26,7 +26,7 @@ Rectangle {
         horizontalSize: this.width + this.anchors.rightMargin + this.anchors.leftMargin 
         anchors.verticalCenter: parent.verticalCenter
         anchors.right: parent.right 
-        anchors.rightMargin: 24
+        anchors.rightMargin: 16
         text: Singletons.DateTime.date
         font.pointSize: Singletons.Constants.fontSize
         color: Singletons.Colors.foreground

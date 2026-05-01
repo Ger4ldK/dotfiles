@@ -150,6 +150,8 @@ layout {
 
         // bar handles top gap
         top -4
+        left 4
+        right 4
     }
 
 
@@ -340,27 +342,22 @@ window-rule {
 
 // App specific rules
 window-rule {
-    match app-id=r#"^org\.wezfurlong\.wezterm$"# is-focused=true
-    opacity 0.9
-}
-window-rule {
-    match app-id=r#"^kitty$"#  is-focused=true
+    match app-id=r#"^kitty|Alacritty|org\.wezfurlong\.wezterm$"# is-focused=true
     opacity 0.9
 
     background-effect {
         blur true
     }
 }
-window-rule {
-    match app-id=r#"^Alacritty$"#  is-focused=true
-    opacity 0.9
-}
-
 
 // Global rules
 window-rule {
     match is-focused=false
     opacity 0.8
+
+    background-effect {
+        blur true
+    }
 }
 
 // Open the Firefox picture-in-picture player as floating by default.
@@ -377,6 +374,15 @@ layer-rule {
     match namespace="^wallpaper$|^quickshell$"
 
     place-within-backdrop true
+}
+
+layer-rule {
+    match namespace="^launcher$"
+
+    geometry-corner-radius 8
+    background-effect {
+        blur true
+    }
 }
 
 binds {
@@ -597,7 +603,7 @@ binds {
     Mod+C { center-column; }
 
     // Center all fully visible columns on screen.
-    Mod+Ctrl+C { center-visible-columns; }
+    Mod+Shift+C { center-visible-columns; }
 
     // Finer width adjustments.
     // This command can also:
