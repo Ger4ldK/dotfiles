@@ -11,6 +11,7 @@ include $ZSH_CONFIG_PATH/alias.zsh
 include $ZSH_CONFIG_PATH/fetcher.zsh
 
 # TODO check and install if these don't exist
+# TODO also standardize and install into a folder in this directory
 include /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 include ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
