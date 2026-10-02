@@ -22,6 +22,7 @@ applyDotFolder () {
 applyDotFolder "cwal/templates" "$configPath"
 applyDot "cwal/script.sh" "$configPath"
 applyDot "cwal/cwal.ini" "$configPath"
+applyDot "cwal/out/colors-nvim.lua" "$configPath"
 applyDotFolder "fastfetch" "$configPath"
 applyDotFolder "fuzzel" "$configPath"
 applyDotFolder "niri" "$configPath"
