@@ -20,7 +20,7 @@ y() {
 	rm -f -- "$tmp"
 }
 
-alias ls="ls -h --color"
+alias ls="ls -ha --color"
 alias l="ls -hla --color"
 
 eval "$(zoxide init --cmd cd zsh)"
